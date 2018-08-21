@@ -1,0 +1,27 @@
+import React, { Component }from 'react';
+import ReactDOM from 'react-dom';
+import JSON from './jsony.json';
+
+//components
+import Header from './components/header';
+import NewsList from './components/news_list';
+
+class App extends Component {
+
+    state = {
+        news: JSON
+    }
+
+   render(){
+    return(
+        <div>
+           <Header/>
+           <NewsList news={this.state.news}><h3>The news are:</h3></NewsList>
+        </div>
+    );
+    }
+}
+
+let root = document.querySelector('#root');
+
+ReactDOM.render(<App/>, root);
